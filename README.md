@@ -4,6 +4,8 @@ There is a large price discrepency between retailers for the same Playstation 4 
 to build a website where I could check prices on a game, and ask the website to notify me over
 email if the game's retail price at any store dropped below an inputted price threshold.
 
+![Screen Shot](example.jpg)
+
 # Work In Progress
 So far I've given only a few evenings to this project.  It needs more work to be functionally
 useful and reliable
