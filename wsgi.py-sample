@@ -1,0 +1,21 @@
+#
+# Copy this file as wsgi.py
+# and insert the appropriate api keys
+#
+# These api-keys should never be stored into code repo
+#
+
+from os import environ as env
+
+env['AMAZON_ACCESS_KEY'] = '<insert_value_here>'
+env['AMAZON_SECRET_KEY'] = '<insert_value_here>'
+env['AMAZON_ASSOC_TAG']  = '<insert_value_here>'
+
+env['BESTBUY_API_KEY']   = '<insert_value_here>'
+
+env['WALMART_API_KEY']   = '<insert_value_here>'
+
+from project.server import app as application
+if __name__ == "__main__":
+    application.run()
+

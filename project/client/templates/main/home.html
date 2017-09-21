@@ -1,0 +1,61 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="body-content">
+  <div class="clearfix">&nbsp;</div>
+
+  <div class="row">
+    <div class="col-xs-12 gamebox-header">Your Watched Games</div>
+  {% if current_user.is_authenticated %}
+      {% for g in current_user.faves() %}
+          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 gamebox">
+            <a href="{{ url_for( 'main.show_game', game_id=g.id )}}">
+            <img src="{{ g.img_url }}" class="img-thumbnail"><br>
+            <span class="gamebox-title">{{ g.title }}</span>
+            </a><br>
+            <span class="gamebox-pub">{{ g.publisher }}</span>
+          </div>
+          {% if not loop.index % 2 %}<div class="clearfix visible-xs-block"></div>{% endif %}
+          {% if not loop.index % 3 %}<div class="clearfix visible-sm-block"></div>{% endif %}
+          {% if not loop.index % 4 %}<div class="clearfix visible-md-block"></div>{% endif %}
+          {% if not loop.index % 4 %}<div class="clearfix visible-lg-block"></div>{% endif %}
+          {% else %}
+          <div class="col-xs-12 gamebox-helptext">
+            Games added to your watch list appear here.  You can also get notified
+            when games you are watching reach a price you're willing to buy them at.
+          </div>
+      {% endfor %}
+  {% else %}
+      <div class="col-xs-12 gamebox-helptext">
+        Games added to your watch list appear here.  You can also get notified
+        when games you are watching reach a price you're willing to buy them at.
+        <br><br>
+      </div>
+  {% endif %}
+  </div><!-- row -->
+
+
+  {% if recent_games %}
+  <div class="row">
+    <div class="col-xs-12 gamebox-header">Recently Viewed Games</div>
+  {% endif %}
+  {% for g in recent_games %}
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 gamebox">
+    <a href="{{ url_for( 'main.show_game', game_id=g.id )}}">
+    <img src="{{ g.img_url }}" class="img-thumbnail"><br>
+    <span class="gamebox-title">{{ g.title }}</span>
+    </a><br>
+    <span class="gamebox-pub">{{ g.publisher }}</span>
+  </div>
+  {% if not loop.index % 2 %}<div class="clearfix visible-xs-block"></div>{% endif %}
+  {% if not loop.index % 3 %}<div class="clearfix visible-sm-block"></div>{% endif %}
+  {% if not loop.index % 4 %}<div class="clearfix visible-md-block"></div>{% endif %}
+  {% if not loop.index % 4 %}<div class="clearfix visible-lg-block"></div>{% endif %}
+  {% else %}
+  <div class="col-xs-12 gamebox-helptext">No games have been viewed recently!</div>
+  {% endfor %}
+  </div><!-- row recent_games -->
+
+ </div><!-- body-content -->
+{% endblock %}

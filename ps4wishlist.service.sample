@@ -1,0 +1,14 @@
+# /etc/systemd/system/ps4wishlist.service
+[Unit]
+Description=uWSGI server for ps4wishlist
+After=network.target
+
+[Service]
+User=ps4wishlist
+Group=apache
+WorkingDirectory=/home/ps4wishlist/ps4wishlist
+Environment="PATH=/home/ps4wishlist/ps4wishlist/env/bin"
+ExecStart=/home/ps4wishlist/ps4wishlist/env/bin/uwsgi --ini ps4wishlist.ini
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,65 @@
+/* site-wide */
+.site-content {
+  padding-top: 75px;
+}
+
+
+/* for /game/<game_id> */
+.price-row {
+    border-bottom: thin solid #999999;
+    border-right: thin solid #aaaaaa;
+    background-color: #f0f0f0;
+}
+.price-row-label {
+    background-color: #dddddd;
+    border-right: thin solid #ffffff;
+}
+.game-watch {
+    border-bottom: thin solid #aaaaaa;
+    border-top: thin solid #cccccc;
+}
+
+.ids-row {
+    border-bottom: thin solid #999999;
+    border-right: thin solid #aaaaaa;
+    background-color: #f0f0f0;
+
+}
+.ids-row-label {
+    background-color: #dddddd;
+    border-right: thin solid #ffffff;
+}
+.ids-input {
+    font-size: 80%;
+}
+.ids-changed {
+    background-color: #ffeeee;
+    color: red;
+}
+.ids-saved {
+    background-color: #eeffee;
+    color: black;
+}
+
+
+
+/* for tables of game thumbnails */
+.gamebox-header {
+    text-align: center;
+    font-size: 125%;
+    font-variant: small-caps;
+    border-style: solid;
+    border-width: thin;
+    border-color: #cdcdcd;
+    margin-bottom: 1em;
+    background-color: #efefff;
+
+}
+.gamebox {
+    font-size: 80%;
+    text-align: center;
+}
+.gamebox-pub {
+    font-size: 80%;
+    color: grey;
+}

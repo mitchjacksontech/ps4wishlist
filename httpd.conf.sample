@@ -1,0 +1,9 @@
+IncludeOptional conf.d/*.conf
+
+
+LoadModule proxy_uwsgi_module modules/mod_proxy_uwsgi.so
+<VirtualHost *>
+    ServerName ps4wishlist.com
+    ProxyPass / uwsgi://127.0.0.1:8001/
+</VirtualHost>
+

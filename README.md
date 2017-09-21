@@ -1,2 +1,1 @@
-# ps4wishlist
-Python/Flask application
+# ps4wishlist.com
