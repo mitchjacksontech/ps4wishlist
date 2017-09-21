@@ -114,3 +114,13 @@ Wal-mart offers [a Developer API](https://developer.bestbuy.com), with search by
 # The future of PS4 Wish List
 If I find myself with an unusal bit of free time, this project is third on my list of
 pet projects to nurture.  That doesn't bode well for the future of ps4wishlist :)
+
+
+# Room for Improvement
+* A Perl rewrite: Perl is always an improvement
+* The python modules should be better documented, using a standard documentation format
+* The python methods should be better documented, using a standard format that IDEs can understand
+* An error logging system needs to be implemented.  The website should handle errors more gracefully.
+* Game information could be more carefully cached, to reduce the number of external API requests needed to render pages
+* Documentation on installation and deployment is needed
+
