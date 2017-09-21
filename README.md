@@ -6,14 +6,17 @@ email if the game's retail price at any store dropped below an inputted price th
 
 ![Screen Shot](example.jpg)
 
+
 # Work In Progress
 So far I've given only a few evenings to this project.  It needs more work to be functionally
-useful and reliable
+useful and reliable **No user logged-in features are completed**
+
 
 # Please forgive my light documentation
 This was a prototyping, lets-learn-python-and-flask project.  I wasn't expecting the code to be seen, or
 worked with, by anyone else.  My package documentation is pretty sparse.  Please don't take
 this to mean I don't document my code.
+
 
 # Tech Stack
 * [Fedora Linux](https://fedoraproject.org) [Linode](https://linode.com) instance
@@ -22,11 +25,13 @@ this to mean I don't document my code.
 * [Python3](https://python.org) with the [Flask Microframework](http://flask.pocoo.org)
 * Responsive web design using [Bootstrap3](http://getbootstrap.com)'s grid layout
 
+
 # Database Model
 [Object Code for the Database Model](/project/server/models.py)
 
 I would upgrade to MariaDB if this website was going to have any real users.  With
 SQLAlchemy, this is as simple as changing the DSN string
+
 
 # Checking Prices: The real challenge
 [Here is prodapi, the price checking module](project/prodapi)
@@ -40,6 +45,7 @@ I have a design plan to remedy that bug, but it's not yet in place.
 Amazon, Best-Buy and Wal-Mart have public APIs for accessing product information.
 Target and the Playstation Network store don't. 
 
+
 ## A note on price caching
 The TOS for all price APIs require you do not cache pricing information.  Any
 prices displayed to an end user must be retrieved live, every time.   Only
@@ -48,6 +54,7 @@ When viewing a game details page, [like this one for No Man's Sky](https://beta.
 The prices are checked by javascript after the page has loaded.  Otherwise, the
 website would feel very sluggish.  You can watch the price matrix populate over
 a second or so after the page renders.
+
 
 ## Amazon Product Advertising API
 [Python source prodapi/amazon.py](project/prodapi/amazon.py)
@@ -65,11 +72,13 @@ Amazon advertists different prices for prime members, used products, new product
 and other offerings.  Selecting the correct price to display from the dozens the
 API returns is an iffy proposition.
 
+
 ## Best Buy
 [Python source prodapi/bestbuy.py](project/prodapi/bestbuy.py)
 
 The [Best Buy Developer API](https://developer.bestbuy.com) allows item look-up via **UPC code**.
 This is rather straight forward. 
+
 
 ## PSN
 [Python source prodapi/psn.py](project/prodapi/psn.py)
@@ -83,6 +92,7 @@ Using the search API, we make our best guess from the search results which retur
 game is the right one.  Then we make note of the **PSN_id**.  We can check the price
 easily for this game using it's unique PSN identifier in the future.
 
+
 ## Target
 [Python source prodapi/target.py](project/prodapi/target.py)
 
@@ -94,7 +104,13 @@ I perform a title search for the product and, if an appropriate match is found, 
 note of the product's **TCID**, target's internal product identifier.  With the TCID,
 we can make other requests to determine the current price.
 
+
 ## Wal-Mart
 [Python source prodapi/walmart.py](project/prodapi/walmart.py)
 
 Wal-mart offers [a Developer API](https://developer.bestbuy.com), with search by **UPC**.
+
+
+# The future of PS4 Wish List
+If I find myself with an unusal bit of free time, this project is third on my list of
+pet projects to nurture.  That doesn't bode well for the future of ps4wishlist :)
