@@ -49,7 +49,7 @@ Target and the Playstation Network store don't.
 ## A note on price caching
 The TOS for all price APIs require you do not cache pricing information.  Any
 prices displayed to an end user must be retrieved live, every time.   Only
-basic product information is cacshed in the database,  Prices are live checked.
+basic product information is cached in the database,  Prices are live checked.
 When viewing a game details page, [like this one for No Man's Sky](https://beta.ps4wishlist.com/game/9),
 The prices are checked by javascript after the page has loaded.  Otherwise, the
 website would feel very sluggish.  You can watch the price matrix populate over
